@@ -4,7 +4,7 @@
   "description": "email-myself is a lightweight backend service built with Node.jsand Express.jsthat allows any website with a contact form to send emails. This backend features a single endpoint to handle form submissions from the front end and uses Nodemailer to redirect the email to the site owner's address. The site owner's email must be set as an environment variable.",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch index",
+    "dev": "node --watch index --loadEnv",
     "start": "node index"
   },
   "author": "Ebanx3",

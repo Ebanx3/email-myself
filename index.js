@@ -1,4 +1,4 @@
-process.loadEnvFile();
+if(process.argv.includes("--loadEnv")) process.loadEnvFile();
 const { EMAIL_ADDRESS, EMAIL_APP_PASSWORD, EMAIL_SERVICE, EMAIL_PORT } =
   process.env;
 if (!EMAIL_ADDRESS || !EMAIL_APP_PASSWORD || !EMAIL_SERVICE || !EMAIL_PORT) {
