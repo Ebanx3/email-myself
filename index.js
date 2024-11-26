@@ -1,9 +1,9 @@
 process.loadEnvFile();
-const { EMAIL_ADDRESS, EMAIL_APP_PASSWORD, EMAIL_HOST, EMAIL_PORT } =
+const { EMAIL_ADDRESS, EMAIL_APP_PASSWORD, EMAIL_SERVICE, EMAIL_PORT } =
   process.env;
-if (!EMAIL_ADDRESS || !EMAIL_APP_PASSWORD || !EMAIL_HOST || !EMAIL_PORT) {
+if (!EMAIL_ADDRESS || !EMAIL_APP_PASSWORD || !EMAIL_SERVICE || !EMAIL_PORT) {
   throw Error(
-    "EMAIL_ADDRESS and EMAIL_APP_PASSWORD environment variables are necessary"
+    "EMAIL_ADDRESS, EMAIL_APP_PASSWORD, EMAIL_SERVICE and EMAIL_PORT environment variables are necessary"
   );
 }
 
@@ -16,7 +16,7 @@ server.use(express.json());
 const port = process.env.PORT || 8080;
 
 const transporter = nodemailer.createTransport({
-  host: EMAIL_HOST,
+  host: EMAIL_SERVICE,
   port: EMAIL_PORT,
   secure: true,
   auth: {
@@ -24,6 +24,16 @@ const transporter = nodemailer.createTransport({
     pass: EMAIL_APP_PASSWORD,
   },
 });
+
+server.get("/serverStatus", async(req, res) => {
+  try{
+    res.status(200).json({success: true, message: "server status ON"})
+  }
+  catch(error){
+    console.log(error)
+    return res.status(500).json({ success: false, message: "Server error" });
+  }
+})
 
 server.post("/redirectEmail", async (req, res) => {
   try {

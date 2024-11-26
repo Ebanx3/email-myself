@@ -10,11 +10,11 @@ Este servidor backend permite recibir mensajes a través de un endpoint, y lo au
 ## Instalación
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/yourusername/email-reenviador-api.git
+    git clone https://github.com/Ebanx3/email-myself.git
     ```
 2. Instala las dependencias:
     ```sh
-    cd email-reenviador-api
+    cd email-myself
     npm install
     ```
 3. Configura las variables de entorno:
@@ -28,9 +28,26 @@ Este servidor backend permite recibir mensajes a través de un endpoint, y lo au
 ## Uso
 1. **Iniciar el servidor**:
     ```sh
-    npm start
+    node --run start
     ```
-2. **Enviar datos**:
-    ```sh
-    curl -X POST -H "Content-Type: application/json" -d '{"message": "Hola", "email": "destinatario@example.com"}' http://localhost:3000/send-email
-    ```
+
+## Endpoints
+
+Este servidor ofrece dos endpoints principales:
+
+1. **`/status`**
+   - **Descripción**: Endpoint para verificar si el servidor está activo.
+   - **Método**: `GET`
+   - **Respuesta**: Retorna un mensaje indicando el estado del servidor.
+
+2. **`/redirectEmail`**
+   - **Descripción**: Endpoint para recibir y redirigir correos electrónicos.
+   - **Método**: `POST`
+   - **Body**: Debe incluir los siguientes campos en formato JSON:
+     ```json
+     {
+       "email": "destinatario@example.com",
+       "message": "Este es el contenido del mensaje."
+     }
+     ```
+
