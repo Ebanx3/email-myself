@@ -1,69 +1,91 @@
-# email-myself
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>email-myself</title>
+    <style>
+        img {
+            max-width: 100%; /* Ajuste automático del tamaño de las imágenes */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>email-myself</h1>
 
-## Descripción
-Este servidor backend permite recibir mensajes a través de un endpoint, y lo autoenvía hacia el correo asociado.
+    <h2>Descripción</h2>
+    <p>Este servidor backend permite recibir mensajes a través de un endpoint, y lo autoenvía hacia el correo asociado.</p>
 
-## Funcionalidad
-- **Recepción de datos**: El servidor recibe datos a través de un endpoint POST.
-- **Reenvío de correos**: Utiliza Nodemailer para enviar los correos electrónicos recibidos a la dirección especificada.
+    <h2>Funcionalidad</h2>
+    <ul>
+        <li><strong>Recepción de datos</strong>: El servidor recibe datos a través de un endpoint POST.</li>
+        <li><strong>Reenvío de correos</strong>: Utiliza Nodemailer para enviar los correos electrónicos recibidos a la dirección especificada.</li>
+    </ul>
 
-## Instalación
-1. Clona el repositorio:
-    ```sh
-    git clone https://github.com/Ebanx3/email-myself.git
-    ```
-2. Instala las dependencias:
-    ```sh
-    cd email-myself
-    npm install
-    ```
-3. Configura las variables de entorno:
-    ```env
-    EMAIL_SERVICE=smtp.example.com
-    EMAIL_PORT=587
-    EMAIL_USER=your-email@example.com
-    EMAIL_PASS=your-email-password
-    ```
+    <h2>Instalación</h2>
+    <ol>
+        <li>Clona el repositorio:
+            <pre><code>git clone https://github.com/Ebanx3/email-myself.git</code></pre>
+        </li>
+        <li>Instala las dependencias:
+            <pre><code>cd email-myself
+npm install</code></pre>
+        </li>
+        <li>Configura las variables de entorno:
+            <pre><code>EMAIL_SERVICE=smtp.example.com
+EMAIL_PORT=587
+EMAIL_USER=your-email@example.com
+EMAIL_PASS=your-email-password</code></pre>
+        </li>
+    </ol>
 
-## Uso
-1. **Iniciar el servidor**:
-    ```sh
-    node --run start
-    ```
+    <h2>Uso</h2>
+    <ol>
+        <li><strong>Iniciar el servidor</strong>:
+            <pre><code>node --run start</code></pre>
+        </li>
+    </ol>
 
-## Endpoints
-Este servidor ofrece dos endpoints principales:
+    <h2>Endpoints</h2>
+    <p>Este servidor ofrece dos endpoints principales:</p>
+    <ol>
+        <li><strong>/status</strong>
+            <ul>
+                <li><strong>Descripción</strong>: Endpoint para verificar si el servidor está activo.</li>
+                <li><strong>Método</strong>: <code>GET</code></li>
+                <li><strong>Respuesta</strong>: Retorna un mensaje indicando el estado del servidor.</li>
+            </ul>
+        </li>
+        <li><strong>/redirectEmail</strong>
+            <ul>
+                <li><strong>Descripción</strong>: Endpoint para recibir y redirigir correos electrónicos.</li>
+                <li><strong>Método</strong>: <code>POST</code></li>
+                <li><strong>Body</strong>: Debe incluir los siguientes campos en formato JSON:
+                    <pre><code>{
+    "email": "destinatario@example.com",
+    "message": "Este es el contenido del mensaje."
+}</code></pre>
+                </li>
+            </ul>
+        </li>
+    </ol>
 
-1. **`/status`**
-   - **Descripción**: Endpoint para verificar si el servidor está activo.
-   - **Método**: `GET`
-   - **Respuesta**: Retorna un mensaje indicando el estado del servidor.
-
-2. **`/redirectEmail`**
-   - **Descripción**: Endpoint para recibir y redirigir correos electrónicos.
-   - **Método**: `POST`
-   - **Body**: Debe incluir los siguientes campos en formato JSON:
-     ```json
-     {
-       "email": "destinatario@example.com",
-       "message": "Este es el contenido del mensaje."
-     }
-     ```
-
-## Guía para uso con gmail
-* Acceder al enlace [gmail](https://myaccount.google.com/signinoptions/twosv) y activar la verificación en dos password
-* En la misma página, al final, acceder a Contraseñas de aplicación.
-![contraseñas de aplicacion](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png)
-![nombre aplicación](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png)
-* Copiar la contraseña que aparece a continuación
-![contraseña](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png)
-
-* Una vez clonado completar las variables de entorno:
-```env
-    EMAIL_ADDRESS=<el email con el que creaste la aplicación>
-    EMAIL_APP_PASSWORD=<la contraseña copiada anteriormente>
-    EMAIL_SERVICE=smtp.gmail.com
-    EMAIL_PORT=465
-```
-
-* Una ves colocadas las variables de entorno ejecutar en local o hacer deploy y debería estár funcionando.
+    <h2>Guía para uso con gmail</h2>
+    <ul>
+        <li>Acceder al enlace <a href="https://myaccount.google.com/signinoptions/twosv">gmail</a> y activar la verificación en dos password.</li>
+        <li>En la misma página, al final, acceder a Contraseñas de aplicación.</li>
+        <li><img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png" alt="contraseñas de aplicacion"></li>
+        <li><img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png" alt="nombre aplicación"></li>
+        <li>Copiar la contraseña que aparece a continuación.</li>
+        <li><img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png" alt="contraseña"></li>
+        <li>Una vez clonado completar las variables de entorno:
+            <pre><code>EMAIL_ADDRESS=&lt;el email con el que creaste la aplicación&gt;
+EMAIL_APP_PASSWORD=&lt;la contraseña copiada anteriormente&gt;
+EMAIL_SERVICE=smtp.gmail.com
+EMAIL_PORT=465</code></pre>
+        </li>
+        <li>Una ves colocadas las variables de entorno ejecutar en local o hacer deploy y debería estár funcionando.</li>
+    </ul>
+</body>
+</html>
