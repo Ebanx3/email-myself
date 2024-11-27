@@ -34,7 +34,7 @@ Este servidor backend permite recibir mensajes a través de un endpoint, y lo au
 ## Endpoints
 Este servidor ofrece dos endpoints principales:
 
-1. **`/status`**
+1. **`/serverStatus`**
    - **Descripción**: Endpoint para verificar si el servidor está activo.
    - **Método**: `GET`
    - **Respuesta**: Retorna un mensaje indicando el estado del servidor.
