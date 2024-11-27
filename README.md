@@ -21,8 +21,8 @@ Este servidor backend permite recibir mensajes a través de un endpoint, y lo au
     ```env
     EMAIL_SERVICE=smtp.example.com
     EMAIL_PORT=587
-    EMAIL_USER=your-email@example.com
-    EMAIL_PASS=your-email-password
+    EMAIL_ADDRESS=your-email@example.com
+    EMAIL_APP_PASSWORD=your-email-password
     ```
 
 ## Uso
@@ -53,10 +53,10 @@ Este servidor ofrece dos endpoints principales:
 ## Guía para uso con gmail
 * Acceder al enlace [gmail](https://myaccount.google.com/signinoptions/twosv) y activar la verificación en dos pasos.
 * En la misma página, al final, acceder a Contraseñas de aplicación.
-![contraseñas de aplicacion](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png)
-![nombre aplicación](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png)
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png" height="auto" width="60%"/>
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png" height="auto" width="60%"/>
 * Copiar la contraseña que aparece a continuación
-![contraseña](https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png)
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png" height="auto" width="60%"/>
 
 * Una vez clonado, completa las variables de entorno:
 ```env
@@ -64,3 +64,6 @@ Este servidor ofrece dos endpoints principales:
     EMAIL_APP_PASSWORD=<la contraseña copiada anteriormente>
     EMAIL_SERVICE=smtp.gmail.com
     EMAIL_PORT=465
+```
+
+* Una vez colocadas las variables de entorno, ejecutar en local o hacer deploy y debería estar funcionando.
