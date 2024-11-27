@@ -53,10 +53,10 @@ Este servidor ofrece dos endpoints principales:
 ## Guía para uso con gmail
 * Acceder al enlace [gmail](https://myaccount.google.com/signinoptions/twosv) y activar la verificación en dos pasos.
 * En la misma página, al final, acceder a Contraseñas de aplicación.
-<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png" height="auto" width="60%"/>
-<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png" height="auto" width="60%"/>
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673654/email-myself/imagen_2024-11-26_231411361_ysozm3.png" style="width:60%;height:auto;margin:auto;"/>
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673771/email-myself/imagen_2024-11-26_231609781_gtilqf.png" style="width:60%;height:auto;margin:auto;"/>
 * Copiar la contraseña que aparece a continuación
-<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png" height="auto" width="60%"/>
+<img src="https://res.cloudinary.com/dupcvyc8l/image/upload/v1732673859/email-myself/imagen_2024-11-26_231737151_ap8e3e.png" style="width:60%;height:auto;margin:auto;"/>
 
 * Una vez clonado, completa las variables de entorno:
 ```env
