@@ -16,7 +16,7 @@ export const addFrontendUrlEmail = async (url, email) => {
   .on("error", (err) => console.log(err))
   .connect();
   await client.set(url, email);
-  client.destroy();
+  client.quit();
   return true;
 }
 
@@ -25,6 +25,6 @@ export const getEmail = async (url) => {
   .on("error", (err) => console.log(err))
   .connect();
   const email = await client.get(url);
-  client.destroy();
+  client.quit();
   return email;
 }
