@@ -20,7 +20,8 @@ Desde la URL registrada, envía una solicitud POST al servidor con el siguiente 
 ✅ El servidor redireccionará automáticamente este email al correo previamente registrado.
 
 
-## Deploy [Render](https://todolist-bot-discord.onrender.com)
+## Deploy 
+Actualmente existe un deploy [aquí](https://todolist-bot-discord.onrender.com) en Render donde puedes registrar tu frontend y email para redirigir los emails al tuyo.
 
 ## 🛠 Tecnologías Usadas
 - Node.js ⚡
